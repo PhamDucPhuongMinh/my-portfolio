@@ -51,7 +51,12 @@ const ModalDetailProject: React.FC = () => {
                 },
               }}
             >
-              <Carousel dotPosition="right" autoplay>
+              <Carousel
+                dotPosition="right"
+                autoplay
+                autoplaySpeed={10000}
+                infinite
+              >
                 {imageList.map((item, index) => {
                   return (
                     <div
@@ -63,8 +68,8 @@ const ModalDetailProject: React.FC = () => {
                       <img
                         alt=""
                         src={item}
-                        className="w-100"
-                        onLoad={() => console.log(1)}
+                        className="w-100 pe-zoomin"
+                        loading={index === 0 ? undefined : "lazy"}
                       />
                     </div>
                   );
