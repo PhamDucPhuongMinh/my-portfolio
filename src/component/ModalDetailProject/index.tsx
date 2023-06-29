@@ -54,7 +54,7 @@ const ModalDetailProject: React.FC = () => {
               <Carousel
                 dotPosition="right"
                 autoplay
-                autoplaySpeed={10000}
+                autoplaySpeed={5000}
                 infinite
               >
                 {imageList.map((item, index) => {
