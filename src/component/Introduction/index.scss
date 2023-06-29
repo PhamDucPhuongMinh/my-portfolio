@@ -1,0 +1,92 @@
+@import "../../sass/variables";
+
+.introduction {
+  position: relative;
+  padding-top: $height-navigation;
+  background: linear-gradient(
+      to right,
+      rgba(245, 245, 245, 0.8),
+      rgba(245, 245, 245, 0.8)
+    ),
+    url(../../../public/assets/images/bg-header.svg);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  &__content {
+    width: 92%;
+    max-width: 90rem;
+    text-align: center;
+    &__heading {
+      margin-top: 10rem;
+      font-size: 4.8rem;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      text-align: center;
+      font-weight: 800;
+    }
+    &__info {
+      max-width: 95%;
+      margin: 3rem auto;
+      font-size: 2rem;
+      text-align: center;
+      width: 100%;
+      line-height: 1.6;
+    }
+    &__btn {
+      margin: 0 auto 10rem;
+    }
+    &__mouse {
+      width: 25px;
+      height: 40px;
+      border: 2px solid #333;
+      border-radius: 60px;
+      position: relative;
+      overflow: hidden;
+      position: absolute;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      &::after {
+        content: "";
+        width: 4px;
+        height: 4px;
+        display: block;
+        border-radius: 100%;
+        background-color: #000;
+        position: absolute;
+        top: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+        animation-name: mouseAnimation;
+        animation-duration: 1.5s;
+        animation-iteration-count: infinite;
+      }
+    }
+  }
+}
+
+@media all and (max-width: $width-sm) {
+  .introduction {
+    min-height: unset;
+    &__content {
+      &__heading {
+        font-size: 3.5rem;
+      }
+      &__info {
+        font-size: 1.8rem;
+      }
+    }
+  }
+}
+
+@keyframes mouseAnimation {
+  from {
+    top: 10px;
+    opacity: 1;
+  }
+  to {
+    top: 25px;
+    opacity: 0;
+  }
+}

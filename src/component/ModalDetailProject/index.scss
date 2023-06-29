@@ -1,0 +1,22 @@
+@import "../../sass/variables";
+
+.modal-detail-project {
+  .btn-primary {
+    font-size: 1.3rem;
+    padding: 0.5rem 3rem;
+  }
+  .ant-carousel {
+    .slick-dots {
+      li {
+        button {
+          background-color: #aeaeae;
+        }
+      }
+      li.slick-active {
+        button {
+          background-color: $primary-color;
+        }
+      }
+    }
+  }
+}

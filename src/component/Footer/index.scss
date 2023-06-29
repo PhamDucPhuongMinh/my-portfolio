@@ -1,0 +1,43 @@
+@import "../../sass/variables";
+
+.footer {
+  background-color: #000;
+  color: #fff;
+  &__content {
+    padding: 5rem 0;
+    display: flex;
+    justify-content: space-between;
+    &__info {
+      max-width: 35rem;
+      margin-right: 1rem;
+      p {
+        font-size: 1.4rem;
+      }
+    }
+  }
+  &__copyright {
+    padding: 3.5rem 0;
+    border-top: 1px solid #444;
+    p {
+      text-align: center;
+      font-size: 1.2rem;
+    }
+  }
+  .icon-media {
+    transition: all 0.2s linear;
+    &:hover {
+      color: $primary-color;
+    }
+  }
+}
+
+@media all and (max-width: $width-md) {
+  .footer {
+    &__content {
+      flex-direction: column-reverse;
+      &__social-media {
+        padding-bottom: 5rem;
+      }
+    }
+  }
+}

@@ -1,0 +1,80 @@
+@import "../../sass/variables";
+
+.projects {
+  padding: 12rem 0;
+  &__heading {
+    h3 {
+      font-size: 3.5rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      position: relative;
+      &::after {
+        content: "";
+        display: block;
+        width: 30px;
+        height: 5px;
+        border-radius: 10px;
+        background: $primary-color;
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+    }
+    p {
+      max-width: 70rem;
+      margin: auto;
+      font-size: 1.8rem;
+      opacity: 0.7;
+    }
+  }
+  &__content {
+    margin-top: 8rem;
+    &__item {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr;
+      grid-gap: 5rem;
+      &:not(:last-child) {
+        margin-bottom: 8rem;
+      }
+      p {
+        line-height: 1.7;
+        color: #666;
+      }
+      .projects__item__buttons {
+        gap: 1rem;
+      }
+    }
+  }
+}
+@media all and (max-width: $width-lg) {
+  .projects {
+    &__content {
+      &__item {
+        grid-template-columns: 1fr;
+        grid-gap: 2rem;
+        .projects__item__info {
+          max-width: 55rem;
+          margin: auto;
+          h2 {
+            width: 100%;
+            text-align: center;
+          }
+          p {
+            text-align: center;
+          }
+          .projects__item__buttons {
+            margin: auto;
+            flex-wrap: wrap;
+            justify-content: center;
+          }
+        }
+      }
+    }
+  }
+}
+@media all and (max-width: $width-md) {
+  .projects {
+    padding: 9rem 0;
+  }
+}

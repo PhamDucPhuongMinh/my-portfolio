@@ -1,0 +1,78 @@
+@import "../../sass/variables";
+
+.about {
+  padding: 12rem 0;
+  background-color: #fafafa;
+  &__heading {
+    h3 {
+      font-size: 3.5rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      position: relative;
+      &::after {
+        content: "";
+        display: block;
+        width: 30px;
+        height: 5px;
+        border-radius: 10px;
+        background: $primary-color;
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+    }
+    p {
+      max-width: 70rem;
+      margin: auto;
+      font-size: 1.8rem;
+      opacity: 0.7;
+    }
+  }
+  &__content {
+    margin-top: 8rem;
+    display: flex;
+    flex-wrap: wrap;
+    h5 {
+      font-size: 2.5rem;
+    }
+    &__main {
+      padding-right: 5rem;
+      width: 50%;
+      .about__content__button {
+        margin-top: 2rem;
+      }
+    }
+    &__skills {
+      width: 50%;
+      padding-left: 5rem;
+      .about__skills__item {
+        background-color: #e7e7e7;
+        padding: 10px 20px;
+        border-radius: 5px;
+        color: #666;
+        margin: 0.4rem 1.5rem 1.1rem 0;
+      }
+    }
+  }
+}
+@media all and (max-width: $width-lg) {
+  .about {
+    &__content {
+      &__main {
+        width: 100%;
+        padding-right: 0;
+        margin-bottom: 5rem;
+      }
+      &__skills {
+        width: 100%;
+        padding-left: 0;
+      }
+    }
+  }
+}
+@media all and (max-width: $width-md) {
+  .about {
+    padding: 9rem 0;
+  }
+}
