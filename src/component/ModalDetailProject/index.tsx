@@ -65,12 +65,20 @@ const ModalDetailProject: React.FC = () => {
                       data-fancybox="gallery"
                       data-src={item}
                     >
-                      <img
-                        alt=""
-                        src={item}
-                        className="w-100 pe-zoomin"
-                        loading={index === 0 ? undefined : "lazy"}
-                      />
+                      <div
+                        style={{
+                          minHeight: 250,
+                          background:
+                            "url(/assets/images/loading.gif) no-repeat center / contain",
+                        }}
+                      >
+                        <img
+                          alt=""
+                          src={item}
+                          className="w-100 pe-zoomin"
+                          loading={index === 0 ? undefined : "lazy"}
+                        />
+                      </div>
                     </div>
                   );
                 })}
