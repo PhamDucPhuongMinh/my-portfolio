@@ -65,7 +65,18 @@ const ModalDetailProject: React.FC = () => {
                       data-fancybox="gallery"
                       data-src={item}
                     >
-                      <img alt="" src={item} className="w-100 pe-zoomin" />
+                      <img
+                        alt=""
+                        src={item}
+                        className="w-100 pe-zoomin d-block"
+                        style={{
+                          height: 100,
+                        }}
+                        onLoad={(e) =>
+                          ((e.target as HTMLInputElement).style.height =
+                            "fit-content")
+                        }
+                      />
                     </div>
                   );
                 })}
