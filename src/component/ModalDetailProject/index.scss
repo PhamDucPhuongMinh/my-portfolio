@@ -5,38 +5,27 @@
     font-size: 1.3rem;
     padding: 0.5rem 3rem;
   }
-  .swiper-slide {
-    padding-right: 13px;
-  }
-  .swiper-pagination {
-    display: flex !important;
-    flex-direction: column !important;
-    width: fit-content !important;
-    top: 50% !important;
-    bottom: unset !important;
-    transform: translateY(-50%) !important;
-    right: 0 !important;
-    left: unset !important;
-    .swiper-pagination-bullet {
-      display: block;
-      margin: 4px !important;
-      width: 5px;
-      height: 15px;
-      border-radius: 5px;
-      &.swiper-pagination-bullet-active {
-        background-color: $primary-color;
-      }
+  .swiper {
+    padding: 20px 0;
+    &-slide {
+      padding-right: 13px;
     }
-  }
-  .ant-carousel {
-    .slick-dots {
-      li {
-        button {
-          background-color: #aeaeae;
-        }
-      }
-      li.slick-active {
-        button {
+    &-pagination {
+      display: flex !important;
+      flex-direction: column !important;
+      width: fit-content !important;
+      top: 50% !important;
+      bottom: unset !important;
+      transform: translateY(-50%) !important;
+      right: 0 !important;
+      left: unset !important;
+      .swiper-pagination-bullet {
+        display: block;
+        margin: 4px !important;
+        width: 5px;
+        height: 15px;
+        border-radius: 5px;
+        &.swiper-pagination-bullet-active {
           background-color: $primary-color;
         }
       }

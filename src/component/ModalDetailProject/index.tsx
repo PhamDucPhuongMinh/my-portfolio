@@ -80,12 +80,8 @@ const ModalDetailProject: React.FC = () => {
                           src={item}
                           className="w-100 pe-zoomin d-block"
                           style={{
-                            height: 100,
+                            minHeight: 100,
                           }}
-                          onLoad={(e) =>
-                            ((e.target as HTMLInputElement).style.height =
-                              "fit-content")
-                          }
                         />
                       </div>
                     </SwiperSlide>
