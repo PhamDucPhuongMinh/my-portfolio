@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { Carousel, Modal } from "antd";
+import { Modal } from "antd";
 import { useDispatch, useSelector } from "react-redux";
 import {
   getContentModalDetailProject,
@@ -8,9 +8,13 @@ import {
   getTitleModalDetailProject,
 } from "../../redux/selectors";
 import { setDetailProject } from "../../redux/slices/detailProjectSlice";
+import "swiper/css";
+import "swiper/css/pagination";
 import "./index.scss";
 import "@fancyapps/ui/dist/fancybox/fancybox.css";
 import Fancybox from "../FancyBox";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Pagination, Autoplay } from "swiper/modules";
 
 const ModalDetailProject: React.FC = () => {
   const dispatch = useDispatch();
@@ -51,36 +55,43 @@ const ModalDetailProject: React.FC = () => {
                 },
               }}
             >
-              <Carousel
-                dotPosition="right"
-                autoplay
-                autoplaySpeed={5000}
-                infinite
+              <Swiper
+                modules={[Pagination, Autoplay]}
+                className="mySwiper"
+                pagination={{
+                  clickable: true,
+                }}
+                // autoplay={{
+                //   delay: 2500,
+                //   disableOnInteraction: false,
+                // }}
               >
                 {imageList.map((item, index) => {
                   return (
-                    <div
-                      key={index}
-                      className="f-carousel__slide"
-                      data-fancybox="gallery"
-                      data-src={item}
-                    >
-                      <img
-                        alt=""
-                        src={item}
-                        className="w-100 pe-zoomin d-block"
-                        style={{
-                          height: 100,
-                        }}
-                        onLoad={(e) =>
-                          ((e.target as HTMLInputElement).style.height =
-                            "fit-content")
-                        }
-                      />
-                    </div>
+                    <SwiperSlide>
+                      <div
+                        key={index}
+                        className="f-carousel__slide"
+                        data-fancybox="gallery"
+                        data-src={item}
+                      >
+                        <img
+                          alt=""
+                          src={item}
+                          className="w-100 pe-zoomin d-block"
+                          style={{
+                            height: 100,
+                          }}
+                          onLoad={(e) =>
+                            ((e.target as HTMLInputElement).style.height =
+                              "fit-content")
+                          }
+                        />
+                      </div>
+                    </SwiperSlide>
                   );
                 })}
-              </Carousel>
+              </Swiper>
             </Fancybox>
             <button
               className="btn-primary ms-auto mt-4"

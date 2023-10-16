@@ -5,6 +5,29 @@
     font-size: 1.3rem;
     padding: 0.5rem 3rem;
   }
+  .swiper-slide {
+    padding-right: 13px;
+  }
+  .swiper-pagination {
+    display: flex !important;
+    flex-direction: column !important;
+    width: fit-content !important;
+    top: 50% !important;
+    bottom: unset !important;
+    transform: translateY(-50%) !important;
+    right: 0 !important;
+    left: unset !important;
+    .swiper-pagination-bullet {
+      display: block;
+      margin: 4px !important;
+      width: 5px;
+      height: 15px;
+      border-radius: 5px;
+      &.swiper-pagination-bullet-active {
+        background-color: $primary-color;
+      }
+    }
+  }
   .ant-carousel {
     .slick-dots {
       li {
