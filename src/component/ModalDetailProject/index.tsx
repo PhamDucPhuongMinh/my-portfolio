@@ -61,10 +61,10 @@ const ModalDetailProject: React.FC = () => {
                 pagination={{
                   clickable: true,
                 }}
-                // autoplay={{
-                //   delay: 2500,
-                //   disableOnInteraction: false,
-                // }}
+                autoplay={{
+                  delay: 2500,
+                  disableOnInteraction: false,
+                }}
               >
                 {imageList.map((item, index) => {
                   return (
